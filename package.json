@@ -17,8 +17,7 @@
     "react": "^19.0.0",
     "react-clock": "^5.1.0",
     "react-dom": "^19.0.0",
-    "react-i18next": "^15.4.0",
-    "three": "^0.173.0"
+    "react-i18next": "^15.4.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
