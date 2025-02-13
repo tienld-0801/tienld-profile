@@ -30,7 +30,7 @@ export default function SplashScreen() {
     setIsExiting(true);
     setTimeout(() => {
       router.push(PAGE_ROUTES.PORTFOLIO);
-    }, 500);
+    }, 400);
   };
 
   return (
