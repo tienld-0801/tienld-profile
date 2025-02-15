@@ -37,7 +37,7 @@ export default function SplashScreen() {
     <AnimatePresence>
       {!isExiting && (
         <motion.div
-          className="fixed inset-0 flex flex-col items-center justify-center min-h-screen bg-black text-white"
+          className="fixed inset-0 flex flex-col items-center justify-center min-h-screen bg-black text-white px-4 sm:px-8"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ y: '-100vh', opacity: 0 }}
@@ -46,14 +46,14 @@ export default function SplashScreen() {
           <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-blue-500 to-purple-600 opacity-20 blur-2xl z-0"></div>
 
           <motion.div
-            className="text-5xl font-bold mb-4 tracking-wider text-red-400 uppercase"
+            className="text-4xl sm:text-5xl font-bold mb-4 tracking-wider text-red-400 uppercase text-center"
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             {date}
           </motion.div>
 
-          <div className="flex space-x-3 text-9xl font-extrabold tracking-wider">
+          <div className="flex flex-wrap items-center justify-center space-x-2 sm:space-x-3 text-6xl sm:text-9xl font-extrabold tracking-wider">
             <motion.div
               className="digit"
               animate={{ color: ['#ff0000', '#00ffcc', '#ffff00', '#ff00ff'] }}
@@ -82,7 +82,7 @@ export default function SplashScreen() {
               {seconds}
             </motion.div>
             <motion.div
-              className="ml-4 text-5xl font-semibold text-red-400"
+              className="ml-2 sm:ml-4 text-3xl sm:text-5xl font-semibold text-red-400"
               animate={{ opacity: [0.5, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
@@ -91,7 +91,7 @@ export default function SplashScreen() {
           </div>
 
           <motion.button
-            className="mt-16 px-10 py-4 bg-gradient-to-r from-red-600 to-blue-500 text-white text-xl font-extrabold rounded-lg shadow-md tracking-wider uppercase border border-white cursor-pointer z-10"
+            className="mt-12 sm:mt-16 px-6 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-red-600 to-blue-500 text-white text-lg sm:text-xl font-extrabold rounded-lg shadow-md tracking-wider uppercase border border-white cursor-pointer z-10"
             animate={{
               y: [0, -10, 0],
               scale: [1, 1.05, 1],
@@ -106,7 +106,7 @@ export default function SplashScreen() {
             whileTap={{ scale: 0.9 }}
             onClick={handleStart}
           >
-            Get Started
+            Get Started 🚀🚀🚀
           </motion.button>
 
           <style jsx>{`
