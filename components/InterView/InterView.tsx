@@ -1,10 +1,21 @@
 'use client';
 
+import { SESSION_ABOUT, SESSION_PROJECT } from '@/shared/constants';
 import { motion } from 'framer-motion';
 import { Terminal } from 'lucide-react';
 import Image from 'next/image';
 
 export default function InterView() {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      console.log('Scrolling to:', sectionId);
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn('Section not found:', sectionId);
+    }
+  };
+
   return (
     <section className="p-6 flex flex-col md:flex-row items-center justify-center gap-6 max-w-5xl mx-auto text-center md:text-left">
       <div>
@@ -21,12 +32,14 @@ export default function InterView() {
           <motion.span
             whileHover={{ scale: 1.1 }}
             className="flex items-center gap-2 bg-[#732dd9] text-white px-4 py-2 rounded-full cursor-pointer"
+            onClick={() => scrollToSection(SESSION_ABOUT)}
           >
             <Terminal color="#ffffff" /> About Me
           </motion.span>
           <motion.span
             whileHover={{ scale: 1.1 }}
             className="flex items-center gap-2 bg-[#732dd9] text-white px-4 py-2 rounded-full cursor-pointer"
+            onClick={() => scrollToSection(SESSION_PROJECT)}
           >
             <Terminal color="#ffffff" /> Project
           </motion.span>
