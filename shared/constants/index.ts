@@ -11,3 +11,8 @@ export const SOCIAL_NETWORK_COLOR = '#c561f6';
 // Dark mode
 export const DARK_MODE = 'dark';
 export const LIGHT_MODE = 'light';
+
+// Session Scroll
+export const SESSION_ABOUT = 'about-section';
+export const SESSION_PROJECT = 'project-section';
+
