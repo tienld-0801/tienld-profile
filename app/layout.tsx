@@ -6,6 +6,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Providers } from './providers';
 import './globals.css';
 
+export const dynamic = 'force-static';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
