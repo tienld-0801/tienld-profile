@@ -14,7 +14,7 @@ export default function Project({ projects }: ProjectProps) {
         Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((item) => (
+        {[...projects].reverse().map((item) => (
           <motion.div
             key={item.id}
             className="rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-white transform transition duration-300 hover:shadow-2xl hover:-translate-y-2 p-6 border-2 border-[#c561f6]"
