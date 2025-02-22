@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.4",
     "@vercel/speed-insights": "^1.2.0",
     "axios": "^1.7.9",
     "framer-motion": "^12.4.7",
@@ -21,6 +23,7 @@
     "react-clock": "^5.1.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.0",
+    "three": "^0.173.0",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 import { Mail, Phone, Github, Linkedin, Facebook } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function About() {
   return (
@@ -6,7 +7,14 @@ export default function About() {
       <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-8">
         About
       </h2>
-      <div className="max-w-6xl mx-auto p-1 text-white shadow-xl relative overflow-hidden border-2 rounded-xl border-[#c561f6]">
+      <motion.div
+        className="cursor-pointer max-w-6xl mx-auto p-1 text-white shadow-xl relative overflow-hidden border-2 rounded-xl border-[#c561f6]"
+        whileHover={{
+          scale: 1.05,
+          boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.2)',
+        }}
+        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+      >
         <div className="relative z-10 p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-lg">
           <h2 className="text-3xl font-semibold text-gray-900 dark:text-white">
             Le Duy Tien
@@ -94,7 +102,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

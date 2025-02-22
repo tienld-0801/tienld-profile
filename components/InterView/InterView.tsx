@@ -64,8 +64,11 @@ export default function InterView() {
 
       <motion.div
         className="w-[300px] h-[350px] sm:w-[250px] sm:h-[300px] md:w-[450px] md:h-[500px] relative rounded-2xl overflow-hidden shadow-xl bg-gradient-to-b from-[#2d2a5f] to-[#111] border-2 border-[#732dd9] cursor-pointer"
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        whileHover={{
+          scale: 1.05,
+          boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.2)',
+        }}
+        transition={{ type: 'spring', stiffness: 100, damping: 20 }}
       >
         <Image
           src="/tienld.jpg"
