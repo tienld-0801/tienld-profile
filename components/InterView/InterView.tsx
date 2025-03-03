@@ -18,8 +18,8 @@ export default function InterView() {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/leduytien_08_01_2000_cv.pdf';
-    link.setAttribute('download', 'leduytien_08_01_2000_cv.pdf');
+    link.href = '/LEDUYTIEN_08012000_CV.pdf';
+    link.setAttribute('download', 'LEDUYTIEN_08012000_CV.pdf');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

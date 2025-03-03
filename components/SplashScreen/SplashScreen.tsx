@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DATE_DIFF, MAX_TIME, TIME_INTERVAL } from '@/shared/constants';
+import { TIME_INTERVAL } from '@/shared/constants';
 import { useRouter } from 'next/navigation';
 import { PAGE_ROUTES } from '@/shared/constants/router';
+
+const formatTime = (num: number) => num.toString().padStart(2, '0');
 
 export default function SplashScreen() {
   const router = useRouter();
@@ -19,11 +21,7 @@ export default function SplashScreen() {
 
   if (!time) return null;
 
-  const formatTime = (num: number) => num.toString().padStart(2, '0');
-  const hours24 = time.getHours();
-  const hours12 = hours24 % MAX_TIME || MAX_TIME;
-  const ampm = hours24 >= MAX_TIME ? DATE_DIFF.PM : DATE_DIFF.AM;
-  const hours = formatTime(hours12);
+  const hours = formatTime(time.getHours());
   const minutes = formatTime(time.getMinutes());
   const seconds = formatTime(time.getSeconds());
   const date = time.toDateString();
@@ -82,13 +80,6 @@ export default function SplashScreen() {
               transition={{ duration: 3, repeat: Infinity }}
             >
               {seconds}
-            </motion.div>
-            <motion.div
-              className="ml-2 sm:ml-4 text-3xl sm:text-5xl font-semibold text-red-400"
-              animate={{ opacity: [0.5, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              {ampm}
             </motion.div>
           </div>
 
