@@ -1,4 +1,5 @@
 import { ProjectData } from '@/shared/types/project';
+import { NextResponse } from 'next/server';
 
 const projects: ProjectData[] = [
   {
@@ -169,5 +170,13 @@ const projects: ProjectData[] = [
 ];
 
 export async function GET(): Promise<Response> {
-  return Response.json({ result: projects });
+  try {
+    console.log('tienld');
+    return NextResponse.json(projects);
+  } catch (err) {
+    return NextResponse.json(
+      { error: 'Failed to fetch projects', err },
+      { status: 500 }
+    );
+  }
 }
