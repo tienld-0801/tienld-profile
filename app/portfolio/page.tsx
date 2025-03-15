@@ -16,7 +16,7 @@ export default async function PortfolioPage() {
   });
 
   const projects = await res.json();
-  console.log(projects);
+
   return (
     <div className="p-5 bg-white text-black dark:bg-black dark:text-white overflow-x-hidden">
       <ControlPanel />
@@ -25,7 +25,7 @@ export default async function PortfolioPage() {
         <About />
       </div>
       <div id={SESSION_PROJECT}>
-        <Project projects={projects} />
+        <Project projects={projects ?? []} />
       </div>
       <ScrollButton />
     </div>
