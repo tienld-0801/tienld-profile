@@ -2,12 +2,13 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
-  compiler: {
-    removeConsole: {
-      exclude: ['error'],
-    },
-    styledComponents: true,
-  },
+  compiler:
+    process.env.NODE_ENV === 'production'
+      ? {
+          removeConsole: { exclude: ['error'] },
+          styledComponents: true,
+        }
+      : {},
   async headers() {
     return [
       {

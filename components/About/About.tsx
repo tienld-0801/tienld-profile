@@ -1,3 +1,5 @@
+'use client';
+
 import { Mail, Phone, Github, Linkedin, Facebook } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -47,7 +49,9 @@ export default function About() {
               <li>
                 ⚡ PostgreSQL, MongoDB, MySql, Firebase, Redis, Elasticsearch
               </li>
-              <li>⚡ Git, Vite, Webpack, Umijs, Docker, CI/CD, AWS, Microservices</li>
+              <li>
+                ⚡ Git, Vite, Webpack, Umijs, Docker, CI/CD, AWS, Microservices
+              </li>
             </ul>
           </div>
 
