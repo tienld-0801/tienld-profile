@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
-import { LayoutGroup } from 'framer-motion';
 import Head from 'next/head';
+import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
-import { Providers } from './providers';
+import { Providers } from '@/shared/providers/providers';
+import { MotionLayout } from '@/shared/providers/layout-provider';
+
 import './globals.css';
-import Script from 'next/script';
 
 export const dynamic = 'force-static';
 
@@ -58,11 +59,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <LayoutGroup>
+          <MotionLayout>
             {children}
             <SpeedInsights />
             <Analytics />
-          </LayoutGroup>
+          </MotionLayout>
         </Providers>
       </body>
     </html>
