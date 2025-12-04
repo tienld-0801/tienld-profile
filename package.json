@@ -28,7 +28,7 @@
     "react-clock": "^6.0.0",
     "react-dom": "^19.2.0",
     "react-i18next": "^16.0.0",
-    "three": "^0.180.0",
+    "three": "^0.181.2",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
