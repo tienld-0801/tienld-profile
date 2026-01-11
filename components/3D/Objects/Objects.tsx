@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import React, { Suspense, useEffect, useRef, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import LoadingScreen from '@/components/LoadingScreen/LoadingScreen';
-import { CameraControls, Html, Shadow, useGLTF } from '@react-three/drei';
-import Object from '../Object/Object';
-import './index.css';
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import LoadingScreen from "@/components/LoadingScreen/LoadingScreen";
+import { CameraControls, Html, Shadow, useGLTF } from "@react-three/drei";
+import Object from "../Object/Object";
+import "./index.css";
 
 export default function Objects() {
-  useGLTF.preload('./scene.gltf');
+  useGLTF.preload("./scene.gltf");
   const cameraControlRef = useRef<CameraControls | null>(null);
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
@@ -23,8 +23,8 @@ export default function Objects() {
       setLoading(false);
     }, 4000);
 
-    setBgAudio(new Audio('./catBgAudio.mp3'));
-    setTransitAudio(new Audio('./whoosh.mp3'));
+    setBgAudio(new Audio("./catBgAudio.mp3"));
+    setTransitAudio(new Audio("./whoosh.mp3"));
   }, []);
 
   return (
@@ -37,7 +37,7 @@ export default function Objects() {
           position: isMobile ? [15, 30, 80] : [7, 6, 13],
         }}
       >
-        <fog attach="fog" args={['#95a6e8', 20, 30]} />
+        <fog attach="fog" args={["#95a6e8", 20, 30]} />
         <CameraControls ref={cameraControlRef} enabled zoom={false} />
         <Shadow scale={2} />
         <Suspense fallback={null}>
@@ -46,9 +46,9 @@ export default function Objects() {
             <div
               className="buttons"
               style={{
-                position: 'absolute',
-                top: isMobile ? '-450px' : '-415px',
-                left: isMobile ? '-190px' : '-700px',
+                position: "absolute",
+                top: isMobile ? "-450px" : "-415px",
+                left: isMobile ? "-190px" : "-700px",
               }}
             >
               <button

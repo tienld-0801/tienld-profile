@@ -1,12 +1,13 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { TIME_INTERVAL } from '@/shared/constants';
-import { useRouter } from 'next/navigation';
-import { PAGE_ROUTES } from '@/shared/constants/router';
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { TIME_INTERVAL } from "@/shared/constants";
+import { useRouter } from "next/navigation";
+import { PAGE_ROUTES } from "@/shared/constants/router";
+import Fireworks from "@/components/Fireworks/Fireworks";
 
-const formatTime = (num: number) => num.toString().padStart(2, '0');
+const formatTime = (num: number) => num.toString().padStart(2, "0");
 
 export default function SplashScreen() {
   const router = useRouter();
@@ -40,23 +41,24 @@ export default function SplashScreen() {
           className="fixed inset-0 flex flex-col items-center justify-center min-h-screen bg-black text-white px-4 sm:px-8"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          exit={{ y: '-100vh', opacity: 0 }}
+          exit={{ y: "-100vh", opacity: 0 }}
           transition={{ duration: 1 }}
         >
+          <Fireworks />
           <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-blue-500 to-purple-600 opacity-20 blur-2xl z-0"></div>
 
           <motion.div
-            className="text-4xl sm:text-5xl font-bold mb-4 tracking-wider text-red-400 uppercase text-center"
+            className="text-4xl sm:text-5xl font-bold mb-4 tracking-wider text-red-400 uppercase text-center relative z-10"
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             {date}
           </motion.div>
 
-          <div className="flex flex-wrap items-center justify-center space-x-2 sm:space-x-3 text-6xl sm:text-9xl font-extrabold tracking-wider">
+          <div className="flex flex-wrap items-center justify-center space-x-2 sm:space-x-3 text-6xl sm:text-9xl font-extrabold tracking-wider relative z-10">
             <motion.div
               className="digit"
-              animate={{ color: ['#ff0000', '#00ffcc', '#ffff00', '#ff00ff'] }}
+              animate={{ color: ["#ff0000", "#00ffcc", "#ffff00", "#ff00ff"] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
               {hours}
@@ -65,7 +67,7 @@ export default function SplashScreen() {
             <motion.div
               className="digit"
               animate={{
-                color: ['#00ffff', '#ff4500', '#008080', '#800080'],
+                color: ["#00ffff", "#ff4500", "#008080", "#800080"],
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
@@ -75,7 +77,7 @@ export default function SplashScreen() {
             <motion.div
               className="digit"
               animate={{
-                color: ['#ffff00', '#ff1493', '#ff4500', '#00ffff'],
+                color: ["#ffff00", "#ff1493", "#ff4500", "#00ffff"],
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
@@ -92,8 +94,8 @@ export default function SplashScreen() {
             transition={{
               duration: 1,
               repeat: Infinity,
-              repeatType: 'reverse',
-              ease: 'easeInOut',
+              repeatType: "reverse",
+              ease: "easeInOut",
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
